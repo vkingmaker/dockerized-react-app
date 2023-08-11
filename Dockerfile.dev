@@ -1,0 +1,13 @@
+FROM node:alpine
+
+WORKDIR /app
+LABEL version="1.0.0"
+LABEL maintener="Victor Monday"
+
+COPY package.json .
+COPY . .
+
+RUN npm i
+EXPOSE 3000
+
+CMD npm start
